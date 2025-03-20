@@ -1,23 +1,34 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { MoralisProvider } from 'react-moralis';
-import './index.css';
-import { MoralisDappProvider } from './providers/MoralisDappProvider/MoralisDappProvider';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Web3ReactProvider } from '@web3-react/core';
+
 import { ethers } from 'ethers';
+import { MoralisProvider } from 'react-moralis';
+
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Web3ReactProvider } from '@web3-react/core';
+
+import App from './App';
+import { MoralisDappProvider } from './providers/MoralisDappProvider/MoralisDappProvider';
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
-      //main: '#1a90ff',
       main: '#1cac1d',
     },
     neutral: {
-      main: '#f8f9f9',
+      main: '#121212',
+    },
+    background: {
+      default: '#121212',
+      paper: '#1e1e1e',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#b0b0b0',
     },
   },
   typography: {
