@@ -1,9 +1,10 @@
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import certik from 'assets/images/partners/certik.svg';
 import binancechain from 'assets/images/partners/binancechain.svg';
+import certik from 'assets/images/partners/certik.svg';
 import coinmarketcap from 'assets/images/partners/coinmarketcap.svg';
 import fairyproof from 'assets/images/partners/fairyproof.png';
+
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 const partners = [
   { label: 'binancechain', src: binancechain },

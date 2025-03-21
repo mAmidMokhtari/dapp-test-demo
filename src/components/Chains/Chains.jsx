@@ -1,8 +1,21 @@
-import { useEffect, useState } from 'react';
-import { Menu, Dropdown, Button } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
-import { BSCLogo, ETHLogo } from './Logos';
+import {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  Button,
+  Dropdown,
+  Menu,
+} from 'antd';
 import { useChain } from 'react-moralis';
+
+import { DownOutlined } from '@ant-design/icons';
+
+import {
+  BSCLogo,
+  ETHLogo,
+} from './Logos';
 
 const styles = {
   item: {
@@ -59,7 +72,7 @@ function Chains() {
 
   return (
     <div>
-      <Dropdown overlay={menu} trigger={['click']}>
+      <Dropdown trigger={['click']}>
         <Button
           key={selected?.key}
           icon={selected?.icon}

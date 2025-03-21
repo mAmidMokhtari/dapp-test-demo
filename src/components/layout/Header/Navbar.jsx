@@ -1,11 +1,20 @@
-import { useState, Fragment } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import Stack from '@mui/material/Stack';
+import {
+  Fragment,
+  useState,
+} from 'react';
+
+import {
+  Link,
+  NavLink,
+  useLocation,
+} from 'react-router-dom';
+
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Badge from '@mui/material/Badge';
+import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Badge from '@mui/material/Badge';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 //const Navbar = ({mainLinks, presaleLink, bridgeLink, moreMenuLinks, comingSoonLink, handleClickContracts}) => {
 const Navbar = ({
@@ -92,7 +101,7 @@ const Navbar = ({
                   SOON
                 </span>
               }
-              color="primary"
+              color="secondary"
             >
               {link}
             </Badge>

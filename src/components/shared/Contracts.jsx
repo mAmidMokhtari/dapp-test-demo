@@ -1,13 +1,14 @@
-import Typography from '@mui/material/Typography';
+import CloseIcon from '@mui/icons-material/Close';
+import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import CloseIcon from '@mui/icons-material/Close';
-import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
 import CopyToClipboard from './CopyToClipboard';
 
 // mainnet
@@ -55,10 +56,10 @@ export default function Contracts({ open, handleClose }) {
     >
       <DialogTitle id="alert-dialog-title" sx={{ p: 3 }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
-          <Typography variant="h6" sx={{ fontWeight: 500 }}>
+          <Typography variant="h6" sx={{ fontWeight: 500, color: 'white' }}>
             Contracts
           </Typography>
-          <IconButton onClick={handleClose} aria-label="close" sx={{ bgcolor: 'grey.100' }}>
+          <IconButton onClick={handleClose} aria-label="close" sx={{ bgcolor: 'black' }}>
             <CloseIcon />
           </IconButton>
         </Stack>

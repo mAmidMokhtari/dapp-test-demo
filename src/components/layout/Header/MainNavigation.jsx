@@ -1,16 +1,22 @@
-import { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Account from '../../account';
-import Networks from '../../Chains/Networks';
+import {
+  Fragment,
+  useState,
+} from 'react';
+
 // import logo from 'assets/images/logo-symbol1.svg';
 import logo from 'assets/images/logo-elo.png';
-import Navbar from './Navbar';
-import Contracts from '../../shared/Contracts';
-import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
+
 import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+
+import Account from '../../account';
+import Networks from '../../Chains/Networks';
+import Contracts from '../../shared/Contracts';
+import Navbar from './Navbar';
 import SideDrawer from './SideDrawer';
 
 // const mainLinks = [
@@ -60,7 +66,7 @@ const MainNavigation = () => {
         elevation={0}
         sx={{ bgcolor: 'rgba(255,255,255,0.72)', backdropFilter: 'blur(20px)' }}
       >
-        <Toolbar sx={{ borderBottom: 1, borderColor: 'grey.100' }}>
+        <Toolbar sx={{ borderBottom: 1, borderColor: 'grey.700', bgcolor: 'black' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
